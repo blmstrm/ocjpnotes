@@ -32,6 +32,13 @@ public class OperatorsAndStrings {
 			System.out.println("String 1 & String 3 are not equal objects because string1="+string1+" and string3="+string3);
 		}
 		
+		string2 = "Partner!";
+		
+		/*This work due to the fact that string2.equals(null) is a legitimate call.*/
+		if(string2 == null ? string3 == null : string2.equals(string3)){
+			System.out.println("string2 and string 3 are equal.");
+		}
+		
 	}
 
 	public static void AssignmentStatements(){
