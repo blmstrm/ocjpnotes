@@ -39,7 +39,9 @@ public class ClassesAndVariables {
 			char c =(((tmpi >> i) & 0x01) == 1)?'1':'0';
 			System.out.print(c);
 		}
+		
 		System.out.println();
+		
 	}
 
 	public static void printBitsOfChar(char c){
@@ -67,6 +69,7 @@ public class ClassesAndVariables {
 			System.out.print(c);
 		
 		}
+		
 		System.out.println();
 
 	}
@@ -82,6 +85,7 @@ public class ClassesAndVariables {
 		}
 		
 		System.out.println();
+		
 	}
 
 	public static void printBitsOfInt(int n){
@@ -130,6 +134,7 @@ public class ClassesAndVariables {
 		String tmpString = Long.toBinaryString((Double.doubleToRawLongBits(d)));
 		System.out.print("Bit Value: ");
 		System.out.println(sign+tmpString);
+		
 	}
 
 }
