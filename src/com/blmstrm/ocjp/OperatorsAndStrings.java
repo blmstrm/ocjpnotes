@@ -34,7 +34,7 @@ public class OperatorsAndStrings {
 		
 		string2 = "Partner!";
 		
-		/*This work due to the fact that string2.equals(null) is a legitimate call.*/
+		/*This works due to the fact that string2.equals(null) is a legitimate call.*/
 		if(string2 == null ? string3 == null : string2.equals(string3)){
 			System.out.println("string2 and string 3 are equal.");
 		}

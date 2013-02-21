@@ -4,7 +4,25 @@ public class ClassesAndVariables {
 
 	public static void main(String[] args) {
 
-		/*All primitives in bitformat*/
+		/*All primitives in bitformat
+		Boolean value: true
+		Bit value: 00000000000000000000000000000001
+		Char value: ␁
+		Bit value: 00000001
+		Byte value: 127
+		Bit value: 01111111
+		Short value: 32767
+		Bit value: 0111111111111111
+		Integer value: 2147483647
+		Bit value: 01111111111111111111111111111111
+		Long value: 9223372036854775807
+		Bit Value: 0111111111111111111111111111111111111111111111111111111111111111
+		Float value: 3.4028235E38
+		Bit Value: 01111111011111111111111111111111
+		Double value: 1.7976931348623157E308
+		Bit Value: 0111111111101111111111111111111111111111111111111111111111111111
+		*/
+
 		
 		printBitsOfBoolean(true);
 		
