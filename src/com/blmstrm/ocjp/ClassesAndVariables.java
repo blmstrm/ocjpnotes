@@ -9,6 +9,8 @@ public class ClassesAndVariables {
 		Bit value: 00000000000000000000000000000001
 		Char value: ␁
 		Bit value: 00000001
+		Char value: A
+		Bit value: 0000000001000001
 		Byte value: 127
 		Bit value: 01111111
 		Short value: 32767
@@ -20,25 +22,31 @@ public class ClassesAndVariables {
 		Float value: 3.4028235E38
 		Bit Value: 01111111011111111111111111111111
 		Double value: 1.7976931348623157E308
-		Bit Value: 0111111111101111111111111111111111111111111111111111111111111111
-		*/
+		Bit Value: 0111111111101111111111111111111111111111111111111111111111111111*/
 
-		
+
 		printBitsOfBoolean(true);
-		
-		/*Unicode encoding corresponding to Start Of Heading(SOH) symbol*/
-		printBitsOfChar('\u2401');
-		
+
+		/*Char stored as unicode in java usually demands 2 bytes/char.
+		 Transforming chars to strings, depending on system encoding, use either 1 or 2 bytes. 
+		 */
+
+		/*Char stored in one byte example. Unicode 'SOH' (Start of Heading).*/
+		printBitsOfChar1('\u2401');
+
+		/*Char stored in two byte example. Unicode 'A'.*/
+		printBitsOfChar2('A');
+
 		printBitsOfByte((byte)Byte.MAX_VALUE);
-		
+
 		printBitsOfShort((short)Short.MAX_VALUE);
-		
+
 		printBitsOfInt(Integer.MAX_VALUE);
-		
+
 		printBitsOfLong(Long.MAX_VALUE);
-		
+
 		printBitsOfFloat(Float.MAX_VALUE);
-		
+
 		printBitsOfDouble(Double.MAX_VALUE);
 
 	}
@@ -57,22 +65,37 @@ public class ClassesAndVariables {
 			char c =(((tmpi >> i) & 0x01) == 1)?'1':'0';
 			System.out.print(c);
 		}
-		
+
 		System.out.println();
-		
+
 	}
 
-	public static void printBitsOfChar(char c){
+	public static void printBitsOfChar1(char c){
 
-		/*Char is same size as byte*/
+		/*Char is same size as 2 bytes*/
 		System.out.println("Char value: "+c);
 		System.out.print("Bit value: ");
-		
+
 		for(int i = Byte.SIZE-1;i>=0;i--){
 			char d =(((c >> i) & 0x01) == 1)?'1':'0';
 			System.out.print(d);
 		}
-		
+
+		System.out.println();
+
+	}
+
+	public static void printBitsOfChar2(char c){
+
+		/*Char is same size as 2 bytes*/
+		System.out.println("Char value: "+c);
+		System.out.print("Bit value: ");
+
+		for(int i = Byte.SIZE*2-1;i>=0;i--){
+			char d =(((c >> i) & 0x01) == 1)?'1':'0';
+			System.out.print(d);
+		}
+
 		System.out.println();
 
 	}
@@ -81,13 +104,13 @@ public class ClassesAndVariables {
 
 		System.out.println("Byte value: "+b);
 		System.out.print("Bit value: ");
-		
+
 		for(int i = Byte.SIZE-1 ;i>=0;i--){
 			char c =(((b >> i) & 0x01) == 1)?'1':'0';
 			System.out.print(c);
-		
+
 		}
-		
+
 		System.out.println();
 
 	}
@@ -96,14 +119,14 @@ public class ClassesAndVariables {
 
 		System.out.println("Short value: "+s);
 		System.out.print("Bit value: ");
-		
+
 		for(int i = Short.SIZE-1 ;i>=0;i--){
 			char c =(((s >> i) & 0x01) == 1)?'1':'0';
 			System.out.print(c);
 		}
-		
+
 		System.out.println();
-		
+
 	}
 
 	public static void printBitsOfInt(int n){
@@ -126,16 +149,16 @@ public class ClassesAndVariables {
 		String tmpString = Long.toBinaryString(l);
 		System.out.print("Bit Value: ");
 		System.out.println(String.format("%"+Long.SIZE+"s",tmpString).replace(' ','0'));
-	
+
 	}
 
 	public static void printBitsOfFloat(float f){
 
 		System.out.println("Float value: "+f);
-		
+
 		/*Need to find out  sign this way, somehow that bit is not printed below*/
 		char sign = ((Float.floatToRawIntBits(f)>>>Float.SIZE-1) & 1) != 0?'1':'0';
-				
+
 		String tmpString = Integer.toBinaryString(Float.floatToRawIntBits(f));
 		System.out.print("Bit Value: ");
 		System.out.println(sign+tmpString);
@@ -145,14 +168,14 @@ public class ClassesAndVariables {
 	public static void printBitsOfDouble(double d){
 
 		System.out.println("Double value: "+d);
-		
+
 		/*Need to find out sign this way, somehow that bit is not printed below*/
 		char sign = ((Double.doubleToLongBits(d)>>>Long.SIZE-1) & 1) != 0?'1':'0';
-		
+
 		String tmpString = Long.toBinaryString((Double.doubleToRawLongBits(d)));
 		System.out.print("Bit Value: ");
 		System.out.println(sign+tmpString);
-		
+
 	}
 
 }
