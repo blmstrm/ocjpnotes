@@ -38,6 +38,8 @@ public class MethodsAndVariableScope {
 		System.out.println(new staticIncrementer());
 
 		System.out.println(new staticIncrementer());
+		
+	
 
 	}
 
@@ -59,6 +61,10 @@ public class MethodsAndVariableScope {
 		
 		public staticIncrementer(){
 			myNumber = ++number;
+		}
+		
+		public int getMyNumber(){
+			return myNumber;
 		}
 		
 		@Override
