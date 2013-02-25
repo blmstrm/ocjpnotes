@@ -24,20 +24,22 @@ public class MethodsAndVariableScope {
 
 		System.out.println("Original size: "+masterList.size());
 
+		@SuppressWarnings("unused")
 		DealWithArrayList copyDealer = new DealWithArrayList(new ArrayList <Integer>(masterList));
 
-		System.out.println("Size after passed by value: "+masterList.size());
+		System.out.println("Size after passed by value of object: "+masterList.size());
 		
+		@SuppressWarnings("unused")
 		DealWithArrayList valueDealer = new DealWithArrayList(masterList);
 		
-		System.out.println("Size after passed by reference: "+masterList.size());
+		System.out.println("Size after passed by value of reference: "+masterList.size());
 
 
 	}
 
 	/*Package-private access modifier (default)*/
 	static class DealWithArrayList{
-
+		
 		public DealWithArrayList(ArrayList <Integer> incomingList){
 
 			incomingList.clear();
