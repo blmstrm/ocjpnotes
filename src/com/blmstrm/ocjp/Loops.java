@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
+import com.blmstrm.ocjp.MethodsAndVariableScope.DealWithArrayList;
+
+
+
 
 public class Loops {
 
@@ -90,6 +94,6 @@ public class Loops {
 		if(!caughtExcep){
 			System.out.print("The sum is: "+sum);
 		}
-
+		
 	}
 }

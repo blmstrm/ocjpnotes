@@ -205,10 +205,13 @@ public class ClassesAndVariables {
 	public static void printFastFood(){
 		
 		Random randomFoodGenerator = new Random();
+		
 		int kindsOfFood = FastFoods.values().length;
+		
 		FastFoods randomFood = FastFoods.values()[randomFoodGenerator.nextInt(kindsOfFood)];
+		
 		System.out.println("I like a "+randomFood+" with "+randomFood.getToppingCount()+" kinds of topping.");
-	
+		
 	}
 	
 
