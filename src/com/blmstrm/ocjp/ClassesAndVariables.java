@@ -1,6 +1,24 @@
 package com.blmstrm.ocjp;
 
+import java.util.Random;
+
 public class ClassesAndVariables {
+
+	private enum FastFoods {
+		
+		PIZZA(5),HOTDOG(3),HAMBURGER(10);
+			
+		private int toppingCount = 0;
+		
+		private FastFoods(int toppings){
+			this.toppingCount = toppings;
+		}
+		
+		public int getToppingCount(){
+			return this.toppingCount;
+		}
+	
+	}
 
 	public static void main(String[] args) {
 
@@ -48,6 +66,12 @@ public class ClassesAndVariables {
 		printBitsOfFloat(Float.MAX_VALUE);
 
 		printBitsOfDouble(Double.MAX_VALUE);
+
+		/*Starting with Java 7 _ in numbers are allowed*/
+		System.out.println("\nHey! "+555_555);
+
+		/*Print fast food enum*/
+		printFastFood();
 
 	}
 
@@ -177,6 +201,16 @@ public class ClassesAndVariables {
 		System.out.println(sign+tmpString);
 
 	}
+
+	public static void printFastFood(){
+		
+		Random randomFoodGenerator = new Random();
+		int kindsOfFood = FastFoods.values().length;
+		FastFoods randomFood = FastFoods.values()[randomFoodGenerator.nextInt(kindsOfFood)];
+		System.out.println("I like a "+randomFood+" with "+randomFood.getToppingCount()+" kinds of topping.");
+	
+	}
+	
 
 }
 
