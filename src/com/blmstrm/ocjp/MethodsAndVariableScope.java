@@ -33,7 +33,11 @@ public class MethodsAndVariableScope {
 		DealWithArrayList valueDealer = new DealWithArrayList(masterList);
 		
 		System.out.println("Size after passed by value of reference: "+masterList.size());
+		
+		/*Incrementing from static variable*/
+		System.out.println(new staticIncrementer());
 
+		System.out.println(new staticIncrementer());
 
 	}
 
@@ -47,6 +51,21 @@ public class MethodsAndVariableScope {
 			System.out.println("Clearing list.");
 			
 		}
+	}
+	
+	static class staticIncrementer{
+		private static int number = 0;
+		private int myNumber;
+		
+		public staticIncrementer(){
+			myNumber = ++number;
+		}
+		
+		@Override
+		public String toString(){
+			return "My number is "+myNumber;
+		}
+		
 	}
 	
 
