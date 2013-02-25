@@ -96,7 +96,7 @@ public class ClassesAndVariables {
 
 	public static void printBitsOfChar1(char c){
 
-		/*Char is same size as 2 bytes*/
+		/*Char is same size as 1 bytes*/
 		System.out.println("Char value: "+c);
 		System.out.print("Bit value: ");
 
