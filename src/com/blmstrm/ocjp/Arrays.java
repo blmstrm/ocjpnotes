@@ -26,6 +26,8 @@ public class Arrays {
 		ArrayList <Integer> tmpArray = new ArrayList <Integer>(1);
 		tmpArray.ensureCapacity(2);
 		
+		System.out.println("Size of the array: "+tmpArray.size());
+		
 		tmpArray.add(new Integer(1));
 		tmpArray.add(new Integer(2));
 		tmpArray.add(new Integer(3));

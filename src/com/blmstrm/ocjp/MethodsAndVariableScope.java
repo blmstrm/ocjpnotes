@@ -58,10 +58,17 @@ public class MethodsAndVariableScope {
 	static class staticIncrementer{
 		private static int number = 0;
 		private int myNumber;
+
+		private Object [] obj = {new Object[]{ new Object[]{new Object[]{}}}};
+		
 		
 		public staticIncrementer(){
 			myNumber = ++number;
-		}
+	ArrayList<Object> al = new ArrayList <Object>();
+	al.add(new Object());
+	al.ensureCapacity(10);
+	System.out.println(al.size());
+ 		}
 		
 		public int getMyNumber(){
 			return myNumber;
