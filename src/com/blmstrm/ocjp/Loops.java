@@ -1,32 +1,23 @@
 package com.blmstrm.ocjp;
 
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
 
-
-
-
-
 public class Loops {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		//System.out.println("Total is: "+total(1,2,3,4,5));
-		//System.out.println("Total is null: "+total(null));
+		System.out.println("Total is: "+total(1,2,3,4,5));
+		System.out.println("Total is: "+total(2));
 
-		//doWhile();
+		doWhile();
 		
 		listIteration();
 		
 	}
 
-	//Variable number of arguments
+	/*Variable number of arguments*/
 	public static int total(int ... array){
 		int sum = 0;
 
@@ -38,13 +29,12 @@ public class Loops {
 		return sum;
 	}
 
-
 	public static void whileLoops(){
 		int i = 5;
 		int j = 10;
 		while(i < j){}
 
-		//(Assignment) Comparsion
+		/*(Assignment) Comparsion*/
 		while((i = 7 ) != 6){}
 	
 		do{
@@ -61,6 +51,8 @@ public class Loops {
 		
 		Iterator<String> iterato = testList.iterator();
 		
+		System.out.println("Iterating through list.");
+		
 		while(iterato.hasNext()){
 			System.out.println(iterato.next());
 		}
@@ -71,13 +63,14 @@ public class Loops {
 		int number;
 		boolean caughtExcep = false;
 
-		Scanner scanner = new Scanner(System.in);
+		System.out.println("Loop breaks at negative integer input.");
 
 		do {
-			try{
+			/*try-with-resources*/
+			try(Scanner scanner = new Scanner(System.in)){
+				
 				System.out.print("Enter a number: ");
 				number = scanner.nextInt();
-
 
 				if(number > 0){
 					sum += number;
@@ -91,8 +84,9 @@ public class Loops {
 		}while (caughtExcep || number >= 0);
 
 		if(!caughtExcep){
-			System.out.print("The sum is: "+sum);
+			System.out.println("The sum is: "+sum);
 		}
 		
 	}
+
 }
