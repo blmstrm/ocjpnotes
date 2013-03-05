@@ -31,6 +31,8 @@ public class Arrays {
 		tmpArray.add(new Integer(1));
 		tmpArray.add(new Integer(2));
 		tmpArray.add(new Integer(3));
+		
+		System.out.println("Hej"+true);
 	}
 	
 }
