@@ -1,5 +1,5 @@
 public class Strings {
-
+/*StringBuffer and StringBuilder are very similar except the fact that StringBuffer is thread-safe while StringBuilder is not.*/
 				private static	StringBuilder a =  new StringBuilder("Du gamla.");
 				private static	StringBuilder b = new StringBuilder("Du fria.");           	
 				private static	StringBuilder c = new StringBuilder("Du fjällhöga nord.");
