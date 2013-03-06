@@ -1,5 +1,4 @@
 package com.blmstrm.ocjp;
-import com.blmstrm.ocjp.ClassesAndVariables;
 
 public class BitOps{
 
